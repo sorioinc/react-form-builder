@@ -7,6 +7,7 @@ import Preview from './preview'
 import Toolbar from './toolbar'
 import ElementActions from './actions/ElementActions';
 import ReactFormGenerator from './form';
+import '../css/application.css.scss'
 
 let FormBuilders = {};
 
