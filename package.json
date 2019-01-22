@@ -5,7 +5,7 @@
   "main": "lib/app.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --recursive",
-    "start": "webpack-dev-server --hot --inline",
+    "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
     "dist": "webpack -p --config webpack.production.config.js"
   },
   "repository": {
@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.3",
+    "extract-text-webpack-plugin": "^2.1.2",
     "fbemitter": "^2.0.0",
     "jquery": "^3.2.1",
     "moment": "^2.13.0",
@@ -50,7 +51,7 @@
     "babel-preset-react": "6.24.1",
     "babel-register": "6.24.1",
     "canvas": "1.6.5",
-    "css-loader": "^0.16.0",
+    "css-loader": "^0.28.11",
     "draft-js": "^0.10.0",
     "draftjs-to-html": "^0.6.1",
     "immutable": "^3.8.1",
@@ -64,11 +65,11 @@
     "react-draft-wysiwyg": "1.7.0",
     "react-hot-loader": "^1.2.7",
     "react-tools": "0.13.3",
-    "sass-loader": "^2.0.1",
+    "sass-loader": "^3.2.3",
     "source-map": "^0.5.6",
-    "style-loader": "^0.12.3",
-    "webpack": "^1.10.1",
-    "webpack-dev-server": "^1.10.1"
+    "style-loader": "^0.23.1",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.11.3"
   },
   "bugs": {
     "url": "https://github.com/blackjk3/react-form-builder/issues"

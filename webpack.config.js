@@ -1,5 +1,5 @@
 module.exports = {
-  entry: ["webpack/hot/dev-server", "./app.js"],
+  entry: "./app.js",
 
   output: {
     filename: "app.js",
@@ -18,11 +18,16 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: "style-loader!css-loader!sass-loader"
+        loaders: ['style-loader', 'css-loader',  'sass-loader']
       }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']
-  }
+    extensions: ['.js', '.json', '.jsx', '.css', '.scss']
+  },
+  devServer: {
+    inline: true,
+    historyApiFallback: true,
+  },
+  devtool: 'eval-source-map'
 }
