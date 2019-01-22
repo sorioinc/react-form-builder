@@ -7,8 +7,9 @@ import * as variables from './variables'
 // Add our stylesheets for the demo.
 require('./css/application.css.scss');
 
+const updater = (data) => console.log(data);
 ReactDOM.render(
-  <FormBuilder.ReactFormBuilder variables={variables} />,
+  <FormBuilder.ReactFormBuilder variables={variables} dataUpdater={updater} />,
   document.getElementById('form-builder')
 )
 

@@ -6,6 +6,7 @@ import React from 'react';
 import Preview from './preview'
 import Toolbar from './toolbar'
 import ElementActions from './actions/ElementActions';
+import ElementStore from './stores/ElementStore';
 import ReactFormGenerator from './form';
 import '../css/application.css.scss'
 
@@ -21,6 +22,13 @@ class ReactFormBuilder extends React.Component {
       editElement: null
     }
     document.addEventListener("click", this.editModeOff.bind(this));
+    ElementStore.listen(this._onChange.bind(this));
+  }
+
+  _onChange(data) {
+    if (this.props.dataUpdater && (typeof this.props.dataUpdater === 'function')) {
+      this.props.dataUpdater(data);
+    }
   }
 
   editModeOn(data, e) {
